@@ -1,90 +1,97 @@
-# Django REST Contact Form
+# Django + React Contacts App
 
-A simple web application demonstrating a Django REST API backend with a MySQL database and a basic HTML/JavaScript frontend. Users can submit contact messages through the form, which are stored in the database and displayed in real time.
+A full-stack web application with a **Django REST API backend** (MySQL database)  
+and a **React frontend**.  
+Originally built with a plain HTML/JS frontend, now upgraded to React.
+
+---
 
 ## Features
 
+### Backend (Django)
 - Django REST Framework API for creating, listing, and deleting contacts
 - MySQL database integration
-- Plain HTML/JavaScript frontend using `fetch` to interact with the API
-- Fully functional CRUD operations for learning purposes
+- Fully functional CRUD operations
+
+### Frontend (React)
+- Modern React UI for submitting and viewing contacts
+- Axios for API calls
+- Automatically updates the list when new contacts are added
+
+---
 
 ## Tech Stack
+- **Backend:** Python 3.x, Django 4.x, Django REST Framework, MySQL  
+- **Frontend:** React 19, Axios, React Scripts 5
 
-- Python 3.x
-- Django 4.x
-- Django REST Framework
-- MySQL
-- HTML / JavaScript
+---
 
-## Installation & Running
+## Getting Started
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/chplus2/django-api-demo.git
-   cd django-api-demo
-   ```
+### 1. Clone Repository
+```bash
+git clone https://github.com/<chplus2>/<django-rest-contacts>.git
+cd django-rest-contacts
+````
 
-2. **Create and activate a virtual environment**
+### 2. Backend Setup
 
-   ```bash
-   python -m venv venv
+```bash
+python -m venv venv
+# Windows PowerShell
+.\venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
 
-   # Windows PowerShell / VS Code terminal
-   # (Optional: PowerShell command, only needed the first time if script execution is blocked)
-   # Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   .\venv\Scripts\Activate.ps1
-   
-   # Windows CMD
-   venv\Scripts\activate
-   
-   # macOS/Linux
-   source venv/bin/activate
-   ```
+pip install -r requirements.txt
+```
 
-3. **Install dependencies**
+Edit `myproject/settings.py` to match your MySQL credentials.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Run migrations and start the server:
 
-4. **Configure MySQL database**
-   Update `myproject/settings.py` with your database name, user, and password.
+```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
 
-5. **Run migrations**
+Backend runs at **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**.
 
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
+---
 
-6. **Start the development server**
+### 3. Frontend Setup
 
-   ```bash
-   python manage.py runserver
-   ```
+From the root folder:
 
-7. **Open in browser**
-   Visit `http://127.0.0.1:8000/` to use the contact form.
+```bash
+cd react-contacts
+npm install
+npm start
+```
 
-## Usage
+Frontend runs at **[http://localhost:3000/](http://localhost:3000/)** and proxies API calls to the Django server.
 
-* Fill in the name, email, and message fields in the frontend form.
-* Submitted messages are saved to the database and displayed below the form.
-* You can also interact with the API directly via endpoints:
+---
 
-  * `GET /api/contacts/` – list all contacts
-  * `POST /api/contacts/` – create a new contact
-  * `DELETE /api/contacts/<id>/` – delete a contact
+## API Endpoints
+
+* `GET /api/contacts/` – list all contacts
+* `POST /api/contacts/` – create a new contact
+* `DELETE /api/contacts/<id>/` – delete a contact
+
+---
 
 ## What I Learned
 
-* Setting up a Django REST Framework project
-* Connecting Django with MySQL
-* Building a simple frontend that consumes a JSON API
-* CRUD operations and handling POST requests in Django
+* Setting up Django REST Framework with MySQL
+* Building a React app that consumes a REST API
+* Handling state, hooks, and form submissions in React
+* CRUD operations and cross-origin requests (CORS)
+
+---
 
 ## Notes
 
-* This project started as a learning exercise; all code was manually typed and understood.
-* CSRF protection is disabled in the API for simplicity—do not use this setup in production.
+* CSRF protection is disabled in the API for simplicity—**do not use this setup in production**.
+* Original plain-HTML frontend remains in the repo for reference but is replaced by React.
