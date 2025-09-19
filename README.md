@@ -1,38 +1,37 @@
-# Django + React Contacts App
+# Django + Vue Contacts App
 
-A full-stack web application with a **Django REST API backend** (MySQL database)  
-and a **React frontend**.  
-Originally built with a plain HTML/JS frontend, now upgraded to React.
-
----
+A full-stack web application with a **Django REST API backend** (MySQL database)
+and a **Vue 3 frontend**.
+Originally built with a plain HTML/JS frontend, now upgraded to Vue.
 
 ## Features
 
 ### Backend (Django)
-- Django REST Framework API for creating, listing, and deleting contacts
-- MySQL database integration
-- Fully functional CRUD operations
 
-### Frontend (React)
-- Modern React UI for submitting and viewing contacts
-- Axios for API calls
-- Automatically updates the list when new contacts are added
+* Django REST Framework API for creating, listing, and deleting contacts
+* MySQL database integration
+* Fully functional CRUD operations
 
----
+### Frontend (Vue)
+
+* Modern Vue 3 UI for submitting and viewing contacts
+* Axios for API calls
+* Automatically updates the list when new contacts are added
+* Uses `v-model` for two-way data binding and `onMounted` for fetching initial data
 
 ## Tech Stack
-- **Backend:** Python 3.x, Django 4.x, Django REST Framework, MySQL  
-- **Frontend:** React 19, Axios, React Scripts 5
 
----
+* **Backend:** Python 3.x, Django 4.x, Django REST Framework, MySQL
+* **Frontend:** Vue 3, Vite, Axios
 
 ## Getting Started
 
 ### 1. Clone Repository
+
 ```bash
-git clone https://github.com/<chplus2>/<django-rest-contacts>.git
-cd django-rest-contacts
-````
+git clone https://github.com/chplus2/django-vue-contacts.git
+cd django-vue-contacts
+```
 
 ### 2. Backend Setup
 
@@ -58,21 +57,18 @@ python manage.py runserver
 
 Backend runs at **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**.
 
----
-
 ### 3. Frontend Setup
 
-From the root folder:
+From the project root:
 
 ```bash
-cd react-contacts
+cd vue-contacts
 npm install
-npm start
+npm run dev
 ```
 
-Frontend runs at **[http://localhost:3000/](http://localhost:3000/)** and proxies API calls to the Django server.
+Frontend runs at **[http://localhost:5173/](http://localhost:5173/)** and proxies API calls to the Django server.
 
----
 
 ## API Endpoints
 
@@ -80,18 +76,14 @@ Frontend runs at **[http://localhost:3000/](http://localhost:3000/)** and proxie
 * `POST /api/contacts/` – create a new contact
 * `DELETE /api/contacts/<id>/` – delete a contact
 
----
-
 ## What I Learned
 
-* Setting up Django REST Framework with MySQL
-* Building a React app that consumes a REST API
-* Handling state, hooks, and form submissions in React
-* CRUD operations and cross-origin requests (CORS)
-
----
+* Integrating Django REST Framework with MySQL
+* Building a Vue 3 app that consumes a REST API
+* Using `ref`, `reactive`, and `v-model` for state management
+* CRUD operations and handling CORS
 
 ## Notes
 
 * CSRF protection is disabled in the API for simplicity—**do not use this setup in production**.
-* Original plain-HTML frontend remains in the repo for reference but is replaced by React.
+* The original plain-HTML frontend remains in the repo for reference but is replaced by Vue.

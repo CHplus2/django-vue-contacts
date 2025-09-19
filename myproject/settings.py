@@ -55,7 +55,11 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
 ]
+
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -83,11 +87,7 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'rest_demo',
-        'USER': 'mintuser',
-        'PASSWORD': '5tr0ngp455w0rd',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
