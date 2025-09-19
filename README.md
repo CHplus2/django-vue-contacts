@@ -9,7 +9,7 @@ Originally built with a plain HTML/JS frontend, now upgraded to Vue.
 ### Backend (Django)
 
 * Django REST Framework API for creating, listing, and deleting contacts
-* MySQL database integration
+* SQLite database integration
 * Fully functional CRUD operations
 
 ### Frontend (Vue)
@@ -21,7 +21,7 @@ Originally built with a plain HTML/JS frontend, now upgraded to Vue.
 
 ## Tech Stack
 
-* **Backend:** Python 3.x, Django 4.x, Django REST Framework, MySQL
+* **Backend:** Python 3.x, Django 4.x, Django REST Framework, SQLite
 * **Frontend:** Vue 3, Vite, Axios
 
 ## Getting Started
@@ -45,7 +45,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Edit `myproject/settings.py` to match your MySQL credentials.
+The project uses SQLite by default.  
+No database configuration is needed unless you want to switch to another database.
 
 Run migrations and start the server:
 
@@ -78,7 +79,7 @@ Frontend runs at **[http://localhost:5173/](http://localhost:5173/)** and proxie
 
 ## What I Learned
 
-* Integrating Django REST Framework with MySQL
+* Integrating Django REST Framework with SQLite Database
 * Building a Vue 3 app that consumes a REST API
 * Using `ref`, `reactive`, and `v-model` for state management
 * CRUD operations and handling CORS
